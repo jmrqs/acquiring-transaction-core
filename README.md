@@ -1,28 +1,31 @@
-# Acquiring - Transaction Core
+﻿# Acquiring - Transaction Core
 
-#
+Transactional core for an acquiring platform, built as a modular monolith for high-scale and reliable financial operations within a distributed ecosystem.
+## 🐳 Get started
 
-### Documentation
-http://localhost:8080/scalar/v1
+### ✅ Build and start containers
 
-### Get started
+```bash
+docker-compose up --build
+```
 
-TODO
+## 🌐 Services
 
-### Tech stack
+| Service        | URL                                | Description                   |
+|----------------|------------------------------------|-------------------------------|
+| **Web API**    | http://localhost:8080             | API Endpoint                  |
+| **Scalar Docs**| http://localhost:8080/scalar/v1   | API Documentation             |
+| **RabbitMQ UI**| http://localhost:15672            | RabbitMQ Management Dashboard |
+| **SQL Server** | localhost:18001                   | SQL Server Instance           |
 
-#### Documentation
-- Scalar - https://scalar.com/
-- Open API - https://github.com/oai/
 
-#### Core
-- .NET 9
 
-#### Databases
-- SQL Server 2019
+### 🧰 Tech Stack
 
-#### Virtualization
-- Docker
-
-#### Messaging
-- RabbitMQ 3.11.7
+| Category       | Technology                          |
+|----------------|--------------------------------------|
+| **Backend**    | .NET 9 (C#, ASP.NET)                |
+| **Database**   | SQL Server 2019                     |
+| **Messaging**  | RabbitMQ 3.11.7 (with Management UI)|
+| **Virtualization**| Docker                           |
+| **API Docs**   | Scalar, OpenAPI                     |
