@@ -13,16 +13,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3D77327F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{AC3143AB-3F56-43E2-B43D-02B2693F7CEA}"
 	ProjectSection(SolutionItems) = preProject
-		README.md = README.md
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Account", "Account", "{596B4975-5CE7-4891-AED3-4ED0512FF267}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Accounts", "Accounts", "{596B4975-5CE7-4891-AED3-4ED0512FF267}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{81DDED9D-158B-E303-5F62-77A2896D2A5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Account", "Acquiring.TransactionCore\Modules\Account\Account\Account.csproj", "{C05B0579-FD49-3C18-8CC7-9DD79445BBD8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "Acquiring.TransactionCore\Host\WebApi\WebApi.csproj", "{ABB3A7A3-02F4-0458-0A7D-11569DB423D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.Accounts", "Acquiring.TransactionCore\Modules\Accounts\Module.Accounts.csproj", "{ACFFA4A5-9874-EED6-B263-84A034F9DD3E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transactions", "Transactions", "{DF278244-4DB8-44BC-A30E-70A4FC5C79EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.Transations", "Acquiring.TransactionCore\Modules\Module.Transations\Module.Transations.csproj", "{A22840D6-0C13-476A-8CCD-ED64F8AF05CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,22 +38,28 @@ Global
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C05B0579-FD49-3C18-8CC7-9DD79445BBD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C05B0579-FD49-3C18-8CC7-9DD79445BBD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C05B0579-FD49-3C18-8CC7-9DD79445BBD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C05B0579-FD49-3C18-8CC7-9DD79445BBD8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ABB3A7A3-02F4-0458-0A7D-11569DB423D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ABB3A7A3-02F4-0458-0A7D-11569DB423D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABB3A7A3-02F4-0458-0A7D-11569DB423D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABB3A7A3-02F4-0458-0A7D-11569DB423D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACFFA4A5-9874-EED6-B263-84A034F9DD3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACFFA4A5-9874-EED6-B263-84A034F9DD3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACFFA4A5-9874-EED6-B263-84A034F9DD3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACFFA4A5-9874-EED6-B263-84A034F9DD3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A22840D6-0C13-476A-8CCD-ED64F8AF05CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A22840D6-0C13-476A-8CCD-ED64F8AF05CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A22840D6-0C13-476A-8CCD-ED64F8AF05CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A22840D6-0C13-476A-8CCD-ED64F8AF05CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{596B4975-5CE7-4891-AED3-4ED0512FF267} = {6E5BCE3F-96BE-4839-BDC7-DC0AF7D61FF1}
-		{C05B0579-FD49-3C18-8CC7-9DD79445BBD8} = {596B4975-5CE7-4891-AED3-4ED0512FF267}
 		{ABB3A7A3-02F4-0458-0A7D-11569DB423D9} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{ACFFA4A5-9874-EED6-B263-84A034F9DD3E} = {596B4975-5CE7-4891-AED3-4ED0512FF267}
+		{DF278244-4DB8-44BC-A30E-70A4FC5C79EE} = {6E5BCE3F-96BE-4839-BDC7-DC0AF7D61FF1}
+		{A22840D6-0C13-476A-8CCD-ED64F8AF05CE} = {DF278244-4DB8-44BC-A30E-70A4FC5C79EE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4BF5B21A-FB48-41D5-B52E-7FDAD50956D8}
