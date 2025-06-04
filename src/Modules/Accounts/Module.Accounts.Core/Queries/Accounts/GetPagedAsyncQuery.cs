@@ -18,11 +18,11 @@ namespace Module.Accounts.Core.Queries.Accounts
 
         public async Task<Result<PaginatedList<AccountDto>>> Handle(GetPagedAsyncQuery request, CancellationToken cancellationToken)
         {
-            PaginatedList<AccountDto> AccountDtoList = await _context.Accounts.OrderByDescending(x => x.AccountNumber)
+            PaginatedList<AccountDto> accountDtoList = await _context.Accounts.OrderByDescending(x => x.AccountNumber)
                .ProjectTo<AccountDto>(_mapper.ConfigurationProvider)
                .PaginatedListAsync(request.PageNumber, request.PageSize);
 
-            return Result.Success(AccountDtoList);
+            return Result.Success(accountDtoList);
         }
     }
 }
