@@ -20,13 +20,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Accounts", "Accounts", "{59
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{81DDED9D-158B-E303-5F62-77A2896D2A5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "Acquiring.TransactionCore\Host\WebApi\WebApi.csproj", "{ABB3A7A3-02F4-0458-0A7D-11569DB423D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "Host\WebApi\WebApi.csproj", "{ABB3A7A3-02F4-0458-0A7D-11569DB423D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.Accounts", "Acquiring.TransactionCore\Modules\Accounts\Module.Accounts.csproj", "{ACFFA4A5-9874-EED6-B263-84A034F9DD3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.Accounts", "Modules\Accounts\Module.Accounts.csproj", "{ACFFA4A5-9874-EED6-B263-84A034F9DD3E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transactions", "Transactions", "{DF278244-4DB8-44BC-A30E-70A4FC5C79EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.Transations", "Acquiring.TransactionCore\Modules\Module.Transations\Module.Transations.csproj", "{A22840D6-0C13-476A-8CCD-ED64F8AF05CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module.Transations", "Modules\Module.Transations\Module.Transations.csproj", "{A22840D6-0C13-476A-8CCD-ED64F8AF05CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
