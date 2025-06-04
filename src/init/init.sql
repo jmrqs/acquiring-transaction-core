@@ -1,3 +1,12 @@
+IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = N'acquiringtransactioncoredb')
+BEGIN
+    CREATE DATABASE acquiringtransactioncoredb;
+END
+GO
+
+USE acquiringtransactioncoredb;
+GO
+
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Accounts')
 BEGIN
     CREATE TABLE Accounts (

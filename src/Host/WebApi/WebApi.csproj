@@ -20,4 +20,9 @@
     <PackageReference Include="Scalar.AspNetCore" Version="2.4.8" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Modules\Accounts\Module.Accounts\Module.Accounts.csproj" />
+    <ProjectReference Include="..\..\Shared\Shared.Core\Shared.Core.csproj" />
+  </ItemGroup>
+
 </Project>

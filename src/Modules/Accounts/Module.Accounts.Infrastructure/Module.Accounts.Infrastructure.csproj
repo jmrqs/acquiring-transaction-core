@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Persistence\Configuration\" />
+    <Folder Include="Persistence\Migrations\" />
+    <Folder Include="Persistence\Seeders\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Shared.Infrastructure\Shared.Infrastructure.csproj" />
+    <ProjectReference Include="..\Module.Accounts.Core\Module.Accounts.Core.csproj" />
+    <ProjectReference Include="..\Module.Accounts.Shared\Module.Accounts.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
