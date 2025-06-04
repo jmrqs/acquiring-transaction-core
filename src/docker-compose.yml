@@ -2,8 +2,8 @@ networks:
   backend:
 
 services:
-  acquiringtransactioncoredb:
-    container_name: acquiring-transaction-core-db
+  acquiring-transaction-core-account-db:
+    container_name: acquiring-transaction-core-account-db
     image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
       - ACCEPT_EULA=Y
@@ -14,6 +14,29 @@ services:
       - 18001:1433
     volumes:
       - ./.containers/database:/var/opt/mssql/data
+      - ./init.sql:/init/init.sql:ro
+      - ./init.sh:/init/init.sh:ro
+
+  seed-acquiring-transaction-core-account-db:
+    image: mcr.microsoft.com/mssql-tools
+    depends_on:
+      - acquiring-transaction-core-account-db
+    entrypoint:
+      - /bin/bash
+      - -c
+      - |
+        echo "Waiting for SQL Server to be available..."
+        for i in {1..30}; do
+          /opt/mssql-tools/bin/sqlcmd -S acquiring-transaction-core-account-db -U sa -P "@qu1r1ngtr@ns@ct10nc0r3" -Q "SELECT 1" && break
+          echo "Retrying in 2 seconds..."
+          sleep 2
+        done
+        echo "Running seed script..."
+        /opt/mssql-tools/bin/sqlcmd -S acquiring-transaction-core-account-db -U sa -P "@qu1r1ngtr@ns@ct10nc0r3" -i /init/init.sql
+    volumes:
+      - ./init:/init
+    networks:
+      - backend
 
   webapi:
     container_name: acquiring-transaction-core-webapi
@@ -30,9 +53,9 @@ services:
     ports:
       - 8080:8080
 
-  acquiringtransactioncoremq:
+  acquiring-transaction-core-mq:
     image: rabbitmq:3.11.7-management
-    container_name: acquiringtransactioncoremq
+    container_name: acquiring-transaction-core-mq
     hostname: acquiring-transaction-core-queue
     volumes:
       - ./.containers/queue/data/:/var/lib/rabbitmq
@@ -43,5 +66,21 @@ services:
     ports:
       - 5672:5672
       - 15672:15672
+    networks:
+      - backend
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - backend
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
     networks:
       - backend
