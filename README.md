@@ -6,17 +6,19 @@ Transactional core for an acquiring platform, built as a modular monolith for hi
 ### ✅ Build and start containers
 
 ```bash
-docker-compose up --build
+run project docker-compose (seed included)
 ```
 
 ## 🌐 Services
 
-| Service        | URL                               | Description                   |
-|----------------|-----------------------------------|-------------------------------|
-| **Web API**    | http://localhost:8080             | API Endpoint                  |
-| **Scalar Docs**| http://localhost:8080/scalar/v1   | API Documentation             |
-| **RabbitMQ UI**| http://localhost:15672            | RabbitMQ Management Dashboard |
-| **SQL Server** | localhost:18001                   | SQL Server Instance           |
+| Service        | URL                               | Description                          |
+|----------------|-----------------------------------|--------------------------------------|
+| **Web API**    | http://localhost:8080             | API Endpoint                         |
+| **RabbitMQ UI**| http://localhost:15672            | RabbitMQ Management Dashboard        |
+| **SQL Server** | localhost:18001                   | SQL Server Instance                  |
+| **Scalar Docs**| http://localhost:8080/scalar/v1   | API Documentation                    |
+| **Prometheus** | http://localhost:9090             | Metrics Scraping and Query Dashboard |
+| **Grafana**    | http://localhost:3000             | Observability Dashboards and Visuals |
 
 ### 🧰 Tech Stack
 
@@ -27,3 +29,4 @@ docker-compose up --build
 | **Messaging**     | RabbitMQ 3.11.7           |
 | **Virtualization**| Docker                    |
 | **API Docs**      | OpenAPI, Scalar           |
+| **Metrics**       | Grafana, Prometheus       |

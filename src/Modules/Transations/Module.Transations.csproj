@@ -9,8 +9,9 @@
   <ItemGroup>
     <Folder Include="App\Controllers\" />
     <Folder Include="App\Extensions\" />
-    <Folder Include="Core\Dtos\" />
     <Folder Include="Core\Abstractions\" />
+    <Folder Include="Core\Dtos\" />
+    <Folder Include="Core\Entities\" />
     <Folder Include="Core\Extensions\" />
     <Folder Include="Core\Interfaces\" />
     <Folder Include="Infrastructure\Extensions\" />
