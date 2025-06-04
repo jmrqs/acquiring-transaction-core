@@ -6,7 +6,7 @@ Transactional core for an acquiring platform, built as a modular monolith for hi
 ### ✅ Build and start containers
 
 ```bash
-run project docker-compose (seed included)
+run project docker-compose on Visual Studio (automatic db seed)
 ```
 
 ## 🌐 Services

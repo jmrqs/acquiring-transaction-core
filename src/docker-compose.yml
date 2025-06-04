@@ -20,17 +20,24 @@ services:
     depends_on:
       - acquiringtransactioncoreaccountdb
     entrypoint:
-    - /bin/bash
-    - -c
-    - |
-      echo "Waiting for SQL Server to be available..."
-      while ! /opt/mssql-tools/bin/sqlcmd -S acquiringtransactioncoreaccountdb -U sa -P "@qu1r1ngtr@ns@ct10nc0r3" -Q "SELECT 1" > /dev/null 2>&1; do
-        echo "SQL Server is unavailable - sleeping 2 seconds"
-        sleep 2
-      done
-      echo "SQL Server is up - running seed script..."
-      /opt/mssql-tools/bin/sqlcmd -S acquiringtransactioncoreaccountdb -U sa -P "@qu1r1ngtr@ns@ct10nc0r3" -i /db/seed-mssql.sql
-    
+      - /bin/bash
+      - -c
+      - |
+        if [ "$ENVIRONMENT" = "Development" ]; then
+          echo "Development environment detected. Running seed script..."
+
+          echo "Waiting for SQL Server to be available..."
+          while ! /opt/mssql-tools/bin/sqlcmd -S acquiringtransactioncoreaccountdb -U sa -P "@qu1r1ngtr@ns@ct10nc0r3" -Q "SELECT 1" > /dev/null 2>&1; do
+            echo "SQL Server is unavailable - sleeping 2 seconds"
+            sleep 2
+          done
+
+          echo "Running seed script..."
+          /opt/mssql-tools/bin/sqlcmd -S acquiringtransactioncoreaccountdb -U sa -P "@qu1r1ngtr@ns@ct10nc0r3" -i /db/seed-mssql.sql
+        else
+          echo "Not development environment. Skipping seed script."
+          sleep infinity
+        fi
     volumes:
       - ../db/seed-mssql.sql:/db/seed-mssql.sql
 
