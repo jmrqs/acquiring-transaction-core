@@ -1,8 +1,9 @@
 ﻿using Module.Accounts.Core.ValueObjects.Enums;
+using Shared.Core.Common;
 
 namespace Module.Accounts.Core.Entities
 {
-    public class Account
+    public class Account : BaseEntity
     {
         public Guid CustomerId { get; set; }
         public Guid AccountId { get; set; }

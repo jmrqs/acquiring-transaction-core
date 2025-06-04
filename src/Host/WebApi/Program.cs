@@ -1,11 +1,18 @@
+using Module.Accounts.Extensions;
 using OpenTelemetry.Metrics;
 using Prometheus;
 using Scalar.AspNetCore;
+using Shared.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
+
+builder.Services.AddSharedInfrastructure();
+
+builder.Services
+    .AddAccountsModule(builder.Configuration);
 
 builder.Services.AddOpenTelemetry()
     .WithMetrics(metrics =>
