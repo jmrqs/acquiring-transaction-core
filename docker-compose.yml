@@ -1,0 +1,47 @@
+networks:
+  backend:
+
+services:
+  acquiringtransactioncoredb:
+    container_name: acquiring-transaction-core-db
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=@qu1r1ngtr@ns@ct10nc0r3
+    networks:
+      - backend
+    ports:
+      - 18001:1433
+    volumes:
+      - ./.containers/database:/var/opt/mssql/data
+
+  webapi:
+    container_name: acquiring-transaction-core-webapi
+    image: ${DOCKER_REGISTRY-}webapi
+    networks:
+      - backend
+    build:
+      context: .
+      dockerfile: Acquiring.TransactionCore/Host/WebApi/Dockerfile
+    environment:
+      - DB_HOST=acquiringtransactioncore
+      - DB_NAME=acquiringtransactioncoredb
+      - DB_SA_PASSWORD=@qu1r1ngtr@ns@ct10nc0r3
+    ports:
+      - 8080:8080
+
+  acquiringtransactioncoremq:
+    image: rabbitmq:3.11.7-management
+    container_name: acquiringtransactioncoremq
+    hostname: acquiring-transaction-core-queue
+    volumes:
+      - ./.containers/queue/data/:/var/lib/rabbitmq
+      - ./.containers/queue/log/:/var/log/rabbitmq
+    environment:
+        RABBITMQ_DEFAULT_USER: guest
+        RABBITMQ_DEFAULT_PASS: guest
+    ports:
+      - 5672:5672
+      - 15672:15672
+    networks:
+      - backend
