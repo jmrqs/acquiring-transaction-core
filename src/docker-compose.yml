@@ -30,10 +30,10 @@ services:
           sleep 2
         done
         echo "Running seed script..."
-        /opt/mssql-tools/bin/sqlcmd -S acquiringtransactioncoreaccountdb -U sa -P "@qu1r1ngtr@ns@ct10nc0r3" -i /database-init/seed.sql
+        /opt/mssql-tools/bin/sqlcmd -S acquiringtransactioncoreaccountdb -U sa -P "@qu1r1ngtr@ns@ct10nc0r3" -i /db/seed-mssql.sql
     
     volumes:
-      - ./database-init:/database-init
+      - ../db/seed-mssql.sql:/db/seed-mssql.sql
 
     networks:
       - backend
@@ -48,7 +48,7 @@ services:
       dockerfile: Host/WebApi/Dockerfile
     environment:
       - DB_HOST=acquiringtransactioncoreaccountdb
-      - DB_NAME=acquiringtransactioncoredb
+      - DB_NAME=acquiringtransactioncoreaccount
       - DB_SA_PASSWORD=@qu1r1ngtr@ns@ct10nc0r3
     ports:
       - 8080:8080
