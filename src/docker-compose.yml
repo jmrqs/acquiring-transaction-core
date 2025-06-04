@@ -30,10 +30,10 @@ services:
           sleep 2
         done
         echo "Running seed script..."
-        /opt/mssql-tools/bin/sqlcmd -S acquiringtransactioncoreaccountdb -U sa -P "@qu1r1ngtr@ns@ct10nc0r3" -i /init/init.sql
+        /opt/mssql-tools/bin/sqlcmd -S acquiringtransactioncoreaccountdb -U sa -P "@qu1r1ngtr@ns@ct10nc0r3" -i /database-init/seed.sql
     
     volumes:
-      - ./init:/init
+      - ./database-init:/database-init
 
     networks:
       - backend
