@@ -22,7 +22,7 @@ services:
       - backend
     build:
       context: .
-      dockerfile: Acquiring.TransactionCore/Host/WebApi/Dockerfile
+      dockerfile: Host/WebApi/Dockerfile
     environment:
       - DB_HOST=acquiringtransactioncore
       - DB_NAME=acquiringtransactioncoredb
