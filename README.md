@@ -13,10 +13,10 @@ run project docker-compose (seed included)
 
 | Service        | URL                               | Description                          |
 |----------------|-----------------------------------|--------------------------------------|
+| **Scalar Docs**| http://localhost:8080/scalar/v1   | API Documentation                    |
 | **Web API**    | http://localhost:8080             | API Endpoint                         |
 | **RabbitMQ UI**| http://localhost:15672            | RabbitMQ Management Dashboard        |
 | **SQL Server** | localhost:18001                   | SQL Server Instance                  |
-| **Scalar Docs**| http://localhost:8080/scalar/v1   | API Documentation                    |
 | **Prometheus** | http://localhost:9090             | Metrics Scraping and Query Dashboard |
 | **Grafana**    | http://localhost:3000             | Observability Dashboards and Visuals |
 
