@@ -10,4 +10,9 @@
     <Folder Include="Extensions\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Shared.Core\Shared.Core.csproj" />
+    <ProjectReference Include="..\Module.Transactions.Core\Module.Transactions.Core.csproj" />
+  </ItemGroup>
+
 </Project>

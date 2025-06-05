@@ -12,6 +12,13 @@
     <Folder Include="Persistence\Migrations\" />
     <Folder Include="Persistence\Seeders\" />
     <Folder Include="Services\" />
+    <Folder Include="ValueObjects\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Shared.Core\Shared.Core.csproj" />
+    <ProjectReference Include="..\Module.Transactions.Core\Module.Transactions.Core.csproj" />
+    <ProjectReference Include="..\Module.Transactions.Shared\Module.Transactions.Shared.csproj" />
   </ItemGroup>
 
 </Project>
