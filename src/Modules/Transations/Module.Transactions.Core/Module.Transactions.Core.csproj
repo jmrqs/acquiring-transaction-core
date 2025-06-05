@@ -13,8 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="ValueObjects\Enums\" />
+    <ProjectReference Include="..\..\..\Shared\Shared.Core\Shared.Core.csproj" />
   </ItemGroup>
 
 </Project>

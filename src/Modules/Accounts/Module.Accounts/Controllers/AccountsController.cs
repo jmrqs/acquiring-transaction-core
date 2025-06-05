@@ -1,14 +1,12 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Module.Accounts.Core.Abstractions;
 using Module.Accounts.Core.Queries.Accounts;
 using Shared.Core.Abstractions;
-
 namespace Module.Accounts.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AccountController(ISender sender) : ApiController(sender)
+    public class AccountsController(ISender sender) : ApiController(sender)
     {
         [HttpGet("{accountId}/customers/{customerId}")]
         public async Task<IActionResult> GetAsync([FromRoute] Guid accountId, [FromRoute] Guid customerId)

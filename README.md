@@ -6,7 +6,7 @@ Transactional core for an acquiring platform, built as a modular monolith for hi
 ### ✅ Build and start containers
 
 ```bash
-run project docker-compose on Visual Studio (automatic db seed)
+Just run project docker-compose on Visual Studio (automatic db seed for [ "$ENVIRONMENT" = "Development" ])
 ```
 
 ## 🌐 Services
@@ -30,3 +30,17 @@ run project docker-compose on Visual Studio (automatic db seed)
 | **Virtualization**| Docker                    |
 | **API Docs**      | OpenAPI, Scalar           |
 | **Metrics**       | Grafana, Prometheus       |
+
+### Sagas
+
+
+## 🎯 Credit Card Transation
+
+| Estado         | Descrição                                                                                  |
+|----------------|--------------------------------------------------------------------------------------------|
+| **Submitted**  | A solicitação foi recebida, dados validados e está aguardando processamento.               |
+| **Authorized** | Transação aprovada, valor reservado no limite do cliente.                                  |
+| **Completed**  | Pagamento processado com sucesso.                                                          |
+| **Failed**     | A transação falhou — motivos como saldo insuficiente, cartão recusado ou erro técnico.     |
+| **Cancelled**  | A transação foi cancelada antes do processamento final.                                    |
+| **Refunded**   | A transação foi estornada após ser concluída e o valor devolvido ao cliente.               |
